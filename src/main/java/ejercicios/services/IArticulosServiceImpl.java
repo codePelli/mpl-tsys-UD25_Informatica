@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import ejercicios.dto.ArticulosDTO;
+import ejercicios.dto.Articulos;
 
 public class IArticulosServiceImpl implements IArticulosService{
 
@@ -13,25 +13,25 @@ public class IArticulosServiceImpl implements IArticulosService{
 	private IArticulosService iArtServ;
 	
 	@Override
-	public List<ArticulosDTO> listArticulos() {
+	public List<Articulos> listArticulos() {
 		// TODO Auto-generated method stub
 		return iArtServ.listArticulos();
 	}
 
 	@Override
-	public ArticulosDTO articulosPorID(Long codigo) {
+	public Articulos articulosPorID(Long codigo) {
 		// TODO Auto-generated method stub
 		return iArtServ.articulosPorID(codigo);
 	}
 
 	@Override
-	public ArticulosDTO saveArticulos(ArticulosDTO articulos) {
+	public Articulos saveArticulos(Articulos articulos) {
 		// TODO Auto-generated method stub
 		return iArtServ.saveArticulos(articulos);
 	}
 
 	@Override
-	public ArticulosDTO updateArticulos(ArticulosDTO articulos) {
+	public Articulos updateArticulos(Articulos articulos) {
 		// TODO Auto-generated method stub
 		return iArtServ.updateArticulos(articulos);
 	}
@@ -42,7 +42,7 @@ public class IArticulosServiceImpl implements IArticulosService{
 	}
 	
 	@GetMapping("/all")
-	public List<ArticulosDTO> listAllArticulos(){
+	public List<Articulos> listAllArticulos(){
 		return listArticulos();
 	}
 

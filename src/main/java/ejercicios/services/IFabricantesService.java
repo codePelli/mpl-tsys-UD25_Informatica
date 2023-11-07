@@ -2,17 +2,17 @@ package ejercicios.services;
 
 import java.util.List;
 
-import ejercicios.dto.FabricantesDTO;
+import ejercicios.dto.Fabricantes;
 
 public interface IFabricantesService {
 	
-	public List<FabricantesDTO> listFabricantes();
+	public List<Fabricantes> listFabricantes();
 	
-	public FabricantesDTO fabricantesPorId(Long codigo);
+	public Fabricantes fabricantesPorId(Long codigo);
 	
-	public FabricantesDTO saveFabricante(FabricantesDTO fabricantes);
+	public Fabricantes saveFabricante(Fabricantes fabricantes);
 	
-	public FabricantesDTO updateFabricante(FabricantesDTO fabricantes);
+	public Fabricantes updateFabricante(Fabricantes fabricantes);
 	
 	public void deleteFabricante(Long codigo);
 

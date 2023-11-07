@@ -1,6 +1,6 @@
 package ejercicios.dto;
 
-import ejercicios.dto.FabricantesDTO.Fabricante;
+import ejercicios.dto.Fabricantes.Fabricante;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table (name = "Articulo")
-public class ArticulosDTO {
+public class Articulos {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = "codigo")

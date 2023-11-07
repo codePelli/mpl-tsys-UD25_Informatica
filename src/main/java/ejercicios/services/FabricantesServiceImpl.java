@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import ejercicios.dto.FabricantesDTO;
+import ejercicios.dto.Fabricantes;
 
 public class FabricantesServiceImpl implements IFabricantesService{
 	
@@ -13,25 +13,25 @@ public class FabricantesServiceImpl implements IFabricantesService{
 	private IFabricantesService iFabricantesService;
 
 	@Override
-	public List<FabricantesDTO> listFabricantes() {
+	public List<Fabricantes> listFabricantes() {
 		// TODO Auto-generated method stub
 		return iFabricantesService.listFabricantes();
 	}
 
 	@Override
-	public FabricantesDTO fabricantesPorId(Long codigo) {
+	public Fabricantes fabricantesPorId(Long codigo) {
 		// TODO Auto-generated method stub
 		return iFabricantesService.fabricantesPorId(codigo);
 	}
 
 	@Override
-	public FabricantesDTO saveFabricante(FabricantesDTO fabricantes) {
+	public Fabricantes saveFabricante(Fabricantes fabricantes) {
 		// TODO Auto-generated method stub
 		return iFabricantesService.saveFabricante(fabricantes);
 	}
 
 	@Override
-	public FabricantesDTO updateFabricante(FabricantesDTO fabricantes) {
+	public Fabricantes updateFabricante(Fabricantes fabricantes) {
 		// TODO Auto-generated method stub
 		return iFabricantesService.updateFabricante(fabricantes);
 	}
@@ -43,7 +43,7 @@ public class FabricantesServiceImpl implements IFabricantesService{
 	}
 	
 	@GetMapping("/all")
-	public List<FabricantesDTO> listAllFabricantes(){
+	public List<Fabricantes> listAllFabricantes(){
 		return listFabricantes();
 	}
 

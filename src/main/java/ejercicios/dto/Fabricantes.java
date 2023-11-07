@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-public class FabricantesDTO {
+public class Fabricantes {
 
 	@Entity
 	@Table(name = "Fabricante")

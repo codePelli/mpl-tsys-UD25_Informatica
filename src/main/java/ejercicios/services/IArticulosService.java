@@ -2,17 +2,17 @@ package ejercicios.services;
 
 import java.util.List;
 
-import ejercicios.dto.ArticulosDTO;
+import ejercicios.dto.Articulos;
 
 public interface IArticulosService {
 	
-	public List<ArticulosDTO> listArticulos();
+	public List<Articulos> listArticulos();
 
-	public ArticulosDTO articulosPorID(Long codigo);
+	public Articulos articulosPorID(Long codigo);
 	
-	public ArticulosDTO saveArticulos(ArticulosDTO articulos);
+	public Articulos saveArticulos(Articulos articulos);
 	
-	public ArticulosDTO updateArticulos(ArticulosDTO articulos);
+	public Articulos updateArticulos(Articulos articulos);
 
 	public void deleteArticulos(Long codigo);
 }
