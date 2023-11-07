@@ -5,7 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
+<<<<<<< HEAD
 import ejercicios.dto.Articulos;
+=======
+import ejercicios.Articulos;
+>>>>>>> branch 'master' of https://github.com/codePelli/mpl-tsys-UD25_Informatica.git
 
 public class IArticulosServiceImpl implements IArticulosService{
 

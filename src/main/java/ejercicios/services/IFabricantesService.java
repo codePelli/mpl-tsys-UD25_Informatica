@@ -2,7 +2,11 @@ package ejercicios.services;
 
 import java.util.List;
 
+<<<<<<< HEAD
 import ejercicios.dto.Fabricantes;
+=======
+import ejercicios.Fabricantes;
+>>>>>>> branch 'master' of https://github.com/codePelli/mpl-tsys-UD25_Informatica.git
 
 public interface IFabricantesService {
 	

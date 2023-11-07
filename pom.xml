@@ -48,6 +48,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+		<dependency>
+			<groupId>Ejercicio_Empleados</groupId>
+			<artifactId>UD25_Empleados</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+>>>>>>> branch 'master' of https://github.com/codePelli/mpl-tsys-UD25_Informatica.git
 	</dependencies>
 
 	<build>
