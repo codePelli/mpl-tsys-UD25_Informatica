@@ -1,16 +1,24 @@
-DROP table IF EXISTS empleado;
+drop database if exists ud14_ejercicio03;
+create database if not exists ud14_ejercicio03;
+use ud14_ejercicio03;
 
-create table empleado(
-	id int auto_increment,
-	nombre varchar(250),
-	apellido varchar(250),
-	direccion varchar(250),
-	dni integer,
-	fecha date
+CREATE TABLE IF NOT EXISTS Fabricantes (
+    Codigo INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre NVARCHAR(100)
 );
 
-insert into empleado (nombre, apellido,direccion,dni,fecha)values('Jose','Marin','calle imaginaria 1',123456789, NOW());
-insert into empleado (nombre, apellido,direccion,dni,fecha)values('Juan','Lopez','calle imaginaria 2',122222222, NOW());
-insert into empleado (nombre, apellido,direccion,dni,fecha)values('Pedro','Guillem','calle imaginaria 3',123333333, NOW());
-insert into empleado (nombre, apellido,direccion,dni,fecha)values('Jordi','Martin','calle imaginaria 4',123444444, NOW());
-insert into empleado (nombre, apellido,direccion,dni,fecha)values('Jonatan','Vicente','calle imaginaria 5',123455555, NOW());
+CREATE TABLE IF NOT EXISTS Articulos (
+    Codigo INT PRIMARY KEY AUTO_INCREMENT,
+    CodigoFabricante INT,
+    Nombre NVARCHAR(100),
+    Precio INT,
+    Fabricante INT,
+    FOREIGN KEY (CodigoFabricante)
+        REFERENCES Fabricantes (Codigo)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO Fabricantes (Nombre) VALUES ('Fabricante 1');
+INSERT INTO Fabricantes (Nombre) VALUES ('Fabricante 2');
+INSERT INTO Articulos (CodigoFabricante, Nombre, Precio) VALUES (1, 'Artículo 1', 100);
+INSERT INTO Articulos (CodigoFabricante, Nombre, Precio) VALUES (2, 'Artículo 2', 150);
