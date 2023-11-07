@@ -1,6 +1,6 @@
-package ejercicios.controller;
+package ejercicios;
 
-import ejercicios.controller.Fabricantes.Fabricante;
+import ejercicios.Fabricantes.Fabricante;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

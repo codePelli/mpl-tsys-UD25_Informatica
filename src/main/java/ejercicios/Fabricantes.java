@@ -1,4 +1,4 @@
-package ejercicios.controller;
+package ejercicios;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

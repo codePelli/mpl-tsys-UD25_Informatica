@@ -2,7 +2,7 @@ package ejercicios.services;
 
 import java.util.List;
 
-import ejercicios.controller.Fabricantes;
+import ejercicios.Fabricantes;
 
 public interface IFabricantesService {
 	
