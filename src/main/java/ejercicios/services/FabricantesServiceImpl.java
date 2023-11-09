@@ -3,43 +3,46 @@ package ejercicios.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import ejercicios.dao.IFabricantesDAO;
 import ejercicios.dto.Fabricantes;
 
+@Service
 public class FabricantesServiceImpl implements IFabricantesService{
 	
 	@Autowired
-	private IFabricantesService iFabricantesService;
+	private IFabricantesDAO iFabricantesService;
 
 	@Override
 	public List<Fabricantes> listFabricantes() {
 		// TODO Auto-generated method stub
-		return iFabricantesService.listFabricantes();
+		return iFabricantesService.findAll();
 	}
 
 	@Override
 	public Fabricantes fabricantesPorId(Long codigo) {
 		// TODO Auto-generated method stub
-		return iFabricantesService.fabricantesPorId(codigo);
+		return iFabricantesService.findById(codigo).get();
 	}
 
 	@Override
 	public Fabricantes saveFabricante(Fabricantes fabricantes) {
 		// TODO Auto-generated method stub
-		return iFabricantesService.saveFabricante(fabricantes);
+		return iFabricantesService.save(fabricantes);
 	}
 
 	@Override
 	public Fabricantes updateFabricante(Fabricantes fabricantes) {
 		// TODO Auto-generated method stub
-		return iFabricantesService.updateFabricante(fabricantes);
+		return iFabricantesService.save(fabricantes);
 	}
 
 	@Override
 	public void deleteFabricante(Long codigo) {
 		// TODO Auto-generated method stub
-		iFabricantesService.deleteFabricante(codigo);
+		iFabricantesService.deleteById(codigo);
 	}
 	
 	@GetMapping("/all")

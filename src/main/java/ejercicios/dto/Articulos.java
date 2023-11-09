@@ -19,6 +19,10 @@ public class Articulos {
 	private String nombre;
 	private int precio;
 	
+	@ManyToOne
+	@JoinColumn (name = "CodigoFabricante", referencedColumnName = "codigo", insertable = false, updatable = false)
+	private Fabricantes fabricante;
+	
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -50,9 +54,5 @@ public class Articulos {
 	public void setFabricante(Fabricantes fabricante) {
 		this.fabricante = fabricante;
 	}
-
-	@ManyToOne
-	@JoinColumn (name = "CodigoFabricante", referencedColumnName = "codigo", insertable = false, updatable = false)
-	private Fabricantes fabricante;
 	
 }

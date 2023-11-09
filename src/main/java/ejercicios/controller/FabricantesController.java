@@ -20,9 +20,10 @@ import ejercicios.services.IFabricantesService;
 @RequestMapping("/Fabricantes")
 public class FabricantesController {
 
+	@Autowired
     private IFabricantesService fabricanteService;
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Fabricantes> getAllFabricantes() {
     	
         return fabricanteService.listFabricantes();
@@ -34,7 +35,7 @@ public class FabricantesController {
         return fabricanteService.fabricantesPorId(codigo);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Fabricantes saveFabricante(@RequestBody Fabricantes fabricante) {
     	
         return fabricanteService.saveFabricante(fabricante);

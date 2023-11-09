@@ -21,7 +21,7 @@ public class ArticulosController {
 
 	private IArticulosService articuloService;
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Articulos> getAllArticulos() {
     	
         return articuloService.listArticulos();
@@ -33,7 +33,7 @@ public class ArticulosController {
         return articuloService.articulosPorID(codigo);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Articulos saveArticulo(@RequestBody Articulos articulo) {
     	
         return articuloService.saveArticulos(articulo);

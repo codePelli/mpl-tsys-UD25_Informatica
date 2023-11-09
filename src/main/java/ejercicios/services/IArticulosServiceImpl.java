@@ -3,42 +3,45 @@ package ejercicios.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import ejercicios.dao.IArticulosDAO;
 import ejercicios.dto.Articulos;
 
+@Service
 public class IArticulosServiceImpl implements IArticulosService{
 
 	@Autowired
-	private IArticulosService iArtServ;
+	private IArticulosDAO iArtServ;
 	
 	@Override
 	public List<Articulos> listArticulos() {
 		// TODO Auto-generated method stub
-		return iArtServ.listArticulos();
+		return iArtServ.findAll();
 	}
 
 	@Override
 	public Articulos articulosPorID(Long codigo) {
 		// TODO Auto-generated method stub
-		return iArtServ.articulosPorID(codigo);
+		return iArtServ.findById(codigo).get();
 	}
 
 	@Override
 	public Articulos saveArticulos(Articulos articulos) {
 		// TODO Auto-generated method stub
-		return iArtServ.saveArticulos(articulos);
+		return iArtServ.save(articulos);
 	}
 
 	@Override
 	public Articulos updateArticulos(Articulos articulos) {
 		// TODO Auto-generated method stub
-		return iArtServ.updateArticulos(articulos);
+		return iArtServ.save(articulos);
 	}
 
 	@Override
 	public void deleteArticulos(Long codigo) {
-		iArtServ.deleteArticulos(codigo);		
+		iArtServ.deleteById(codigo);		
 	}
 	
 	@GetMapping("/all")
