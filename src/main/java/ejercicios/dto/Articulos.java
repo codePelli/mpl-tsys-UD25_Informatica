@@ -1,6 +1,5 @@
 package ejercicios.dto;
 
-import ejercicios.dto.Fabricantes.Fabricante;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,16 +43,16 @@ public class Articulos {
 		this.precio = precio;
 	}
 
-	public Fabricante getFabricante() {
+	public Fabricantes getFabricante() {
 		return fabricante;
 	}
 
-	public void setFabricante(Fabricante fabricante) {
+	public void setFabricante(Fabricantes fabricante) {
 		this.fabricante = fabricante;
 	}
 
 	@ManyToOne
 	@JoinColumn (name = "CodigoFabricante", referencedColumnName = "codigo", insertable = false, updatable = false)
-	private Fabricante fabricante;
+	private Fabricantes fabricante;
 	
 }

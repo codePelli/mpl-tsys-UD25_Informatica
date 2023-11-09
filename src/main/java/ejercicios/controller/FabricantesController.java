@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ejercicios.dto.Articulos;
 import ejercicios.dto.Fabricantes;
-import ejercicios.dto.Fabricantes.Fabricante;
 import ejercicios.services.IFabricantesService;
 
 @RestController
@@ -28,10 +28,10 @@ public class FabricantesController {
         return fabricanteService.listFabricantes();
     }
 
-    @GetMapping("/{id}")
-    public Fabricantes getFabricanteById(@PathVariable Long id) {
+    @GetMapping("/{codigo}")
+    public Fabricantes getFabricanteById(@PathVariable Long codigo) {
     	
-        return fabricanteService.fabricantesPorId(id);
+        return fabricanteService.fabricantesPorId(codigo);
     }
 
     @PostMapping
@@ -40,14 +40,17 @@ public class FabricantesController {
         return fabricanteService.saveFabricante(fabricante);
     }
 
-    @PutMapping("/{id}")
-    public Fabricantes updateFabricante(@PathVariable Long id, @RequestBody Fabricantes fabricante) {
+    @PutMapping("/{codigo}")
+    public Fabricantes updateFabricante(@PathVariable(name = "codigo") Long codigo, @RequestBody Fabricantes fabricante) {
     	
-        return fabricanteService.updateFabricante(fabricante);
+    	Fabricantes fabricanteSeleccionado = fabricanteService.fabricantesPorId(codigo);
+        fabricanteSeleccionado.setNombre(fabricante.getNombre());
+        fabricanteSeleccionado.setCodigo(fabricante.getCodigo());
+        return fabricanteService.saveFabricante(fabricanteSeleccionado);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteFabricante(@PathVariable Long id) {
-        fabricanteService.deleteFabricante(id);
+    @DeleteMapping("/{codigo}")
+    public void deleteFabricante(@PathVariable Long codigo) {
+        fabricanteService.deleteFabricante(codigo);
     }
 }

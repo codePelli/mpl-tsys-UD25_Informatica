@@ -27,10 +27,10 @@ public class ArticulosController {
         return articuloService.listArticulos();
     }
 
-    @GetMapping("/{id}")
-    public Articulos getArticuloById(@PathVariable Long id) {
+    @GetMapping("/{codigo}")
+    public Articulos getArticuloById(@PathVariable Long codigo) {
     	
-        return articuloService.articulosPorID(id);
+        return articuloService.articulosPorID(codigo);
     }
 
     @PostMapping
@@ -39,15 +39,20 @@ public class ArticulosController {
         return articuloService.saveArticulos(articulo);
     }
 
-    @PutMapping("/{id}")
-    public Articulos updateArticulo(@PathVariable Long id, @RequestBody Articulos articulo) {
+    @PutMapping("/{codigo}")
+    public Articulos updateArticulo(@PathVariable(name = "codigo") Long codigo, @RequestBody Articulos articulo) {
     	
-        return articuloService.updateArticulos(articulo);
+    	Articulos artSeleccionado = articuloService.articulosPorID(codigo);
+        artSeleccionado.setNombre(articulo.getNombre());
+        artSeleccionado.setCodigo(articulo.getCodigo());
+        artSeleccionado.setPrecio(articulo.getPrecio());
+        return articuloService.updateArticulos(artSeleccionado);
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteArticulo(@PathVariable Long id) {
+    @DeleteMapping("/{codigo}")
+    public void eliminarDepartamento(@PathVariable(name = "codigo") Long codigo) {
     	
-        articuloService.deleteArticulos(id);
+    	articuloService.deleteArticulos(codigo);
+        System.out.println("Articulo eliminado");
     }
 }
