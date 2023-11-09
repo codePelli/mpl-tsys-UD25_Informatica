@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ejercicios.services.IFabricantesService;
 
 @RestController
-@RequestMapping("/fabricantes")
+@RequestMapping("/Fabricantes")
 public class FabricantesController {
 
 	@Autowired

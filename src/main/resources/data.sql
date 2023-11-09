@@ -1,6 +1,5 @@
-drop database if exists ud14_ejercicio03;
-create database if not exists ud14_ejercicio03;
-use ud14_ejercicio03;
+DROP table IF EXISTS Fabricantes;
+DROP table IF EXISTS Articulos;
 
 CREATE TABLE IF NOT EXISTS Fabricantes (
     Codigo INT PRIMARY KEY AUTO_INCREMENT,
