@@ -5,11 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
-<<<<<<< HEAD
 import ejercicios.dto.Fabricantes;
-=======
-import ejercicios.Fabricantes;
->>>>>>> branch 'master' of https://github.com/codePelli/mpl-tsys-UD25_Informatica.git
 
 public class FabricantesServiceImpl implements IFabricantesService{
 	
